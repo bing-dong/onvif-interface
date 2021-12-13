@@ -1,5 +1,5 @@
 # onvif-interface
-onvif soap **c++11** interface
+onvif soap **C++11** interface
 
 with a device discovery demo
 
@@ -22,7 +22,7 @@ https://www.onvif.org/ver10/receiver.wsdl
 build with cmake
 
 ```
-cd onvif
+cd onvif-interface
 mkdir build
 cd build
 cmake ..
