@@ -58,6 +58,7 @@ Insert the following two lines at the beginning of onvif.h
 #import "wsdd5.h"
 ```
 
+then
 ```
 soapcpp2 -2 -c++ -C -L -x -j -r samples/onvif/onvif.h -d samples/onvif -I . -I ./import/ -I ./custom/
 ```
