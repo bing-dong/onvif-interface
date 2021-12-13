@@ -40,3 +40,24 @@ cd build
 
 `http://192.168.1.64/onvif/device_service http://[fe80::4ef5:dcff:fe9e:c86b]/onvif/device_service`
 
+
+## gsoap build step
+
+it's rough steps
+
+```
+cd gsoap-2.8/gsoap/
+mkdir -p samples/onvif
+
+wsdl2h -c++11 -x -o samples/onvif/onvif.h -t typemap.dat <wsdl> <wsdl> ... 
+```
+
+Insert the following two lines at the beginning of onvif.h
+```
+#import "wsse.h"
+#import "wsdd5.h"
+```
+
+```
+soapcpp2 -2 -c++ -C -L -x -j -r samples/onvif/onvif.h -d samples/onvif -I . -I ./import/ -I ./custom/
+```
